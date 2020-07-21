@@ -1,0 +1,60 @@
+{% extends "home.html" %} {% block title %} Sign Up {% endblock %} {% block content %} {% if msg %}
+<script>
+	alert('{{ msg }}')
+</script>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Sign Up</title>
+	<script src="https://kit.fontawesome.com/23412c6a8d.js">
+	</script>
+	<link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body>
+	<br>
+	<a class="btn back-btn" href="/">Back</a>
+	<div class="col signup" id="signup-form">
+		<a type="button" class="btn btn-login" id="login-page" href="/login">Log In</a>
+		<form action="/signup/" method="post"> {% csrf_token %}
+			<h3>Join Us!</h3>
+
+			<div class="form-group">
+				<input type="email" placeholder="Email" class="form-input" name="email">
+			</div>
+			<div class="form-group">
+				<input type="number" placeholder="Phone Number" class="form-input" name="phone">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Full Name" class="form-input" name="name">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Username" class="form-input" name="username">
+			</div>
+			<div class="form-group">
+				<input type="password" placeholder="Password" class="form-input" name="password">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Address" class="form-input" name="address1">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="City" class="form-input" name="city">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="State" class="form-input" name="state">
+			</div>
+			<div class="form-group">
+				<input type="number" placeholder="Zip Code" class="form-input" name="zip_code">
+			</div>
+			<button type="submit" class="btn btn-signup" id="signupbtn">Sign Up</button>
+		</form>
+
+	</div>
+</body>
+{% endblock %}
