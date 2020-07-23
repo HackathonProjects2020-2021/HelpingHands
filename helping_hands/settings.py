@@ -113,9 +113,15 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 
 # Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIT_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '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'
-EMAIL_HOST_PASSWORD = 'SG.oDN9basdaECvH5asdasw.gXVEgtD1asqSkn-EW'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIT_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = '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'
+# EMAIL_HOST_PASSWORD = 'SG.oDN9basdaECvH5asdasw.gXVEgtD1asqSkn-EW'
+
+
+SENDGRID_API_KEY = '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'
+
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
