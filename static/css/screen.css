@@ -151,7 +151,7 @@ body {
     height: 100%;
 }
 body {
-    background-color: #fff;
+    background-color:white    ;
     font-family: "Lato", sans-serif;
     color: #424242;
 }
@@ -159,7 +159,7 @@ body {
     width: 100%;
     min-height: 500px;
     padding: 50px 0;
-    background-color: #ecf0f1;
+    background-color: white;
     text-align: left;
 }
 .contact__inner {
@@ -229,7 +229,7 @@ body {
     text-align: center;
     background-color: #1bbc9b;
     font-size: 15px;
-    color: #fff;
+    color: red;
     text-transform: uppercase;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -240,8 +240,8 @@ body {
 }
 .contact__card {
     display: inline-block;
-    width: 230px;
-    height: 150px;
+    width: 430px;
+    height: 450px;
 }
 .contact__card-title {
     margin-bottom: 20px;
@@ -356,7 +356,7 @@ body {
 .page-header__nav-link:hover,
 .page-header__nav-link.is-active {
     background-color: #1bbc9b;
-    color: #fff;
+    color: black;
 }
 .page-footer {
     width: 100%;
@@ -377,7 +377,7 @@ body {
     display: inline-block;
     margin: 35px 0 0 45px;
     font-size: 14px;
-    color: #fff;
+    color: black;
 }
 .page-footer__gotop {
     display: block;
@@ -402,13 +402,13 @@ body {
     line-height: 45px;
     font-family: FontAwesome;
     content: "\f077";
-    color: #fff;
+    color: black;
 }
 .portfolio {
     width: 100%;
     min-height: 680px;
     padding-top: 50px;
-    background-color: #fff;
+    background-color: white;
     text-align: center;
 }
 .portfolio__inner {
@@ -482,7 +482,7 @@ body {
     background-color: rgba(27, 188, 155, 0.8);
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    color: #fff;
+    color:white;
     opacity: 0;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -550,7 +550,7 @@ body {
     margin: 0 auto 50px;
     font-size: 18px;
     line-height: 1.1;
-    color: #fff;
+    color: black;
 }
 .promo__btn {
     display: block;
@@ -616,7 +616,7 @@ body {
     font-size: 28px;
     font-weight: 400;
     margin-bottom: 10px;
-    color: #fff;
+    color: green;
     text-transform: capitalize;
 }
 .team__descr {
@@ -630,7 +630,7 @@ body {
     position: relative;
     width: 220px;
     margin: 0 30px 30px;
-    background-color: #fff;
+    background-color: green;
 }
 .team__member img {
     width: 100%;
@@ -659,8 +659,8 @@ body {
 .team__member-soc {
     display: block;
     position: absolute;
-    width: 180px;
-    height: 50px;
+    width: 2080px;
+    height: 2000px;
     top: 95px;
     left: 50%;
     margin-left: -90px;
@@ -686,7 +686,7 @@ body {
     width: 45px;
     height: 50px;
     margin-left: -3px;
-    color: #fff;
+    color: green;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
@@ -696,7 +696,7 @@ body {
     color: #c1c1c1;
 }
 .team__member-icon:before {
-    display: block;
+    display:inline-block;
     font-family: FontAwesome;
     font-size: 30px;
     line-height: 50px;
@@ -857,44 +857,13 @@ body {
     }
 }
 
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-    
-.searchTerm {
-    width: 100%;
-    border: 3px solid #1bbc9b;
-    border-right: none;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-}
-    
-.searchTerm:focus{
-    color: #158f76;
-}
-    
-.searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #1bbc9b;
-    background: #1bbc9b;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-}
+
 
 
 .card {
     background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    border-radius: 30px;
+    box-shadow: 0 1px 0 white;
     padding: 10px;
 }
 

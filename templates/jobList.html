@@ -1,0 +1,93 @@
+{%load static%}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Job Finder</title>
+	<meta name="description" content="Page-specific description">
+	<meta name="keywords" content="Page-specific keywords">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
+	<link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+</head>
+<body>
+	<header class="page-header js-header">
+		<div class="page-header__inner">
+			<div class="page-header__logo">
+			<h1>Default</h1>
+			&nbsp;<span>Web</span>
+			</div>
+			<nav class="page-header__nav js-nav">
+			<ul>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
+				</li>
+				
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
+				</li>
+				
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
+				</li>
+				
+          </form>
+				</li>
+			</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- All Recipes Please add CSS and or fix html, images not found-->
+	<section class="portfolio js-portfolio" id="portfolio">
+		<div class="portfolio__inner">
+			<h2 class="portfolio__title">Jobs List</h2>
+			
+			
+			<ul class="portfolio__content">
+
+				{% for key,value in dic.items %}
+					<li class="portfolio__item js-item" data-cat="all flat">
+
+						<div class="portfolio__item-caption">
+							<span >Job : {{ value|get_item:'jobName' }}</span>
+							<br>
+							<!-- <br> -->
+							<!-- <span >2 .Employer: {{ value|get_item:'employer' }}</span> -->
+							<!-- <br> -->
+							<!-- <br> -->
+							<!-- <span >3 .Phone : {{ value|get_item:'phone' }}</span> -->
+							<!-- <br> -->
+							<!-- <br> -->
+							<!-- <span >4 . Description: {{ value|get_item:'description' }}</span> -->
+							<!-- <br> -->
+							<!-- <br> -->
+							<span >Hours: {{ value|get_item:'hourly_rate' }}</span>
+
+								<a class="promo__btn" href={% url 'job' key %}>More Details</a>
+
+						</div>
+					</a>
+					</li>
+				{% endfor %}
+		
+			</ul>
+		</div>
+	</section>
+
+
+
+</body>
+</html>
+{% endblock %}

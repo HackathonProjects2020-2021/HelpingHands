@@ -1,0 +1,89 @@
+  
+{%load static%}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Virtual Fridge</title>
+    <meta name="description" content="Page-specific description">
+    <meta name="keywords" content="Page-specific keywords">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
+    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+</head>
+<body>
+<header class="page-header js-header">
+		<div class="page-header__inner">
+			<div class="page-header__logo">
+			<h1>Default</h1>
+			&nbsp;<span>Web</span>
+			</div>
+			<nav class="page-header__nav js-nav">
+			<ul>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
+				</li>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'profile'%}">Profile</a>
+				</li>
+
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
+				</li>
+				
+          </form>
+				</li>
+			</ul>
+			</nav>
+		</div>
+	</header>   
+    <!-- $Promo section-->
+    <section style="margin-left:1.5rem;">
+      <h1>Job Name:</h1>
+			<h2>{{ job|get_item:'jobName' }}</h2>
+      <div>
+				<!-- <h2>By {{ job|get_item:'employer' }}</h2> -->
+				<br>
+				<br>
+
+				<h1>Job Employer:</h2>
+				<h2>{{ job.employer }}<h3>
+
+				<br>
+				<br>
+
+				<h1>Job Description:<h1>
+				<h2>{{ job.description }}</h2>
+			</div>
+
+      
+     
+     <br>
+		 <br>
+
+      <h1>Volunteer Hours</h1>
+      <h2>{{ job.hourly_rate }}<h2>
+      <br/>
+      <br/>
+      <br/>
+    </section>
+
+	
+   
+</body>
+</html>
+{% endblock content %}

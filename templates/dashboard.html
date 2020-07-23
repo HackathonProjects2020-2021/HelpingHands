@@ -18,16 +18,63 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-	<link rel="stylesheet" href="../static/css/login.css">
-
 </head>
 
 <body>
-	<!-- $Page header-->
+	<header class="page-header js-header">
+		<div class="page-header__inner">
+			<div class="page-header__logo">
+			<h1>Default</h1>
+			&nbsp;<span>Web</span>
+			</div>
+			<nav class="page-header__nav js-nav">
+			<ul>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
+				</li>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
+				</li>
+
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
+				</li>
+				
+          </form>
+				</li>
+			</ul>
+			</nav>
+		</div>
+	</header>
+	
 	<h1>Welcome</h1>
-	Hi {{e}}
 
-	<button type="button" onclick="location.href='{% url 'logout' %}'">Logout</button>
+	<section class="contact" id="contact">
+		<div class="contact__inner">
+   			<h2 class="contact__title">Publish a Job</h2>
+   			<p class="contact__descr">Publish a Job You Need Help With</p>
+   			<!-- Publish Job Form -->
+        <form class="contact__form" action="/publishJob/" method="post" enctype="multipart/form-data">{% csrf_token %}
+					
+   					<input class="contact__form-input" id="jobName" type="text" name="jobName" placeholder="Job">
 
+					<input class="contact__form-input" id="employer" type="text" name="employer" placeholder="Employer Name"> 
+
+					<textarea class="contact__form-tarea" id="description" name="description" placeholder="Job Description"></textarea>
+
+
+					<input class="contact__form-input" id="phone" type="number" name="phone" placeholder="Phone Number"> 
+					
+					<input class="contact__form-input" id="hourly_rate" type="number" name="hourly_rate" placeholder="Hourly Rate For Job"> 
+
+										
+   				<input class="contact__form-submit" type="submit" value="Submit">
+        </form>
+		</div>
+
+	</section>
 </body>
 </html>

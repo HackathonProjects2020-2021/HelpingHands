@@ -1,0 +1,71 @@
+
+{% block content %}
+
+<style>
+        .container{
+             padding-top: 15px;
+        }
+
+    #id_name{
+        width:100%
+        }
+
+    #id_message{
+        width:100%
+        }
+
+    #id_email{
+        width:100%
+        }
+</style>
+	<header class="page-header js-header">
+		<div class="page-header__inner">
+			<div class="page-header__logo">
+			<h1>Default</h1>
+			&nbsp;<span>Web</span>
+			</div>
+			<nav class="page-header__nav js-nav">
+			<ul>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
+				</li>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
+				</li>
+
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
+				</li>
+				
+          </form>
+				</li>
+			</ul>
+			</nav>
+		</div>
+	</header>
+<div class="container ">
+    <h2>Send Us a Message</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            {{ field.errors }}
+            <label>{{ field.label_tag }}</label>
+            <p>{{ field }}</p>
+        </div>
+        {% endfor %}
+        <button type="reset" class="btn btn-secondary">Reset</button>
+         <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+{% endblock content %}
