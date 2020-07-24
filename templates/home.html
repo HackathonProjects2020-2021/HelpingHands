@@ -3,50 +3,549 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>DEFAULT WEBSITE</title>
-	<meta name="description" content="Page-specific description">
-	<meta name="keywords" content="Page-specific keywords">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
-	<link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
-	<link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
-</head>
-<body>
-	<!-- $Page header-->
-	<header class="page-header js-header">
-		<div class="page-header__inner">
-			<div class="page-header__logo">
-			<h1>My</h1>
-			&nbsp;<span>Web</span>
-			</div>
-			<nav class="page-header__nav js-nav">
-			<ul>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
-				</li>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Helping Hands</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animatecss.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/prettyPhoto.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
 
 
 
+  </head>
+   <body data-spy="scroll" data-target=".main-nav">
+    
+    <section id="section-banner">
+    	<div class="container">
+    		<div class="row">
+    			<div class="banner-content wow fadeInRight">
+    				<h2 class="title"> 
+	    					Helping Hands<br/>
+							<span>
+				text <br/> 
+							text	</span>
+    				</h2>
 
-			</ul>
-			</nav>
+    				<a href="#" class="btn btn-default">Login/Sign Up</a>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
+    <section class="section-menu">
+    	<div class="navbar navbar-default main-nav" role="navigation" >
+    		<div class="container" >
+    			<div class="navbar-header">
+    				<button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
+    					<span class="sr-only"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+				
+					<a href="#" class="navbar-brand">Helping Hands</a>
+    			</div> 
+    			<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+    				<ul class="nav navbar-nav navbar-right">
+    					<li class="active"><a href="#section-banner">Home </a></li>
+    					<li><a href="#section-about">About us </a></li>
+    					<li><a href="#section-stat">Stats </a></li>
+    					<li><a href="#section-something">something </a></li>
+    					<li><a href="#section-testimonial">Testimonials </a></li>
+    					<li><a href="#section-gallery">Gallery </a></li>
+    					<li><a href="#section-contact">Contact us </a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+ <section id="section-overview" class="section-padding">
+		<div class="container">
+			<div class="row">
+						<div class="service-wrapper">
+							<div class="service-inner wow fadeInRight" data-wow-delay=".2s">
+								<i class="fa fa-users"></i>
+								<div class="service-box">
+									<h3>smth</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
+								</div>
+							</div>
+							<div class="service-inner wow fadeInRight" data-wow-delay=".5s">
+								<i class="fa fa-bank"></i>
+								<div class="service-box">
+									<h3>smth</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
+								</div>
+							</div>  
+							<div class="service-inner wow fadeInRight" data-wow-delay=".8s">
+								<i class="fa fa-pencil"></i>
+								<div class="service-box">
+									<h3>smth</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
+								</div>
+							</div>
+							<div class="service-inner wow fadeInRight" data-wow-delay="1.1s">
+								<i class="fa fa-globe"></i>
+								<div class="service-box">
+									<h3>smth</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
+								</div>
+							</div>  
+						</div>
+					</div>
 		</div>
-	</header>
-	<!-- $Promo section-->
-	<section  id="home">
-		<h2 class="promo__title">My<span>Web</span></h2>
-		<a class="promo__btn" href="/login">LOGIN TO START</a>
+	</section>
+
+
+	<section id="section-about" class="section-padding">
+		<div class="about-bg visible-md visible-lg"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 col-sm-12 pull-right">
+					<div class="about-desc wow fadeInRight">
+						 <h2 class="section-title uppercase">Connecting People</h2>
+<br/>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    </p>
+ <br/>
+ 
+
+                                    <p class="text-grey animated bounceInUp" style="opacity: 1;">
+                                        Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.
+                                    </p>
+<br/>
+                                    <p class="text-grey animated bounceInUp" style="opacity: 1;">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    </p>
+					  
+					</div>
+					
+					
+				</div>
+			</div> 
+		</div>
+	</section>
+
+
+	<section id="section-stat" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="heading-title">Stats</h2>
+				</div>
+				<div class="col-md-6 col-sm-6 wow fadeInLeft">
+					<div class="stat-desc">
+						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
+						<br>
+						<br> 
+						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+
+						 
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-6 wow fadeInRight" >
+					<div class="stat-box wow fadeInDown" data-wow-delay=".2s">
+						<label> smth</label>
+						<div class="progress">
+							<div class="progress-bar" role="progress-bar" aria-valuemin="0" aria-valuenow="70" aria-valuemax="100" style="width: 70%;" >
+								70%
+							</div>
+						</div>
+					</div>
+					<div class="stat-box wow fadeInDown" data-wow-delay=".4s">
+						<label> smth</label>
+						<div class="progress">
+							<div class="progress-bar" role="progress-bar" aria-valuemin="0" aria-valuenow="85" aria-valuemax="100" style="width: 85%;" >
+								85%
+							</div>
+						</div>
+					</div>
+					<div class="stat-box wow fadeInDown" data-wow-delay=".6s">
+						<label> smth</label>
+						<div class="progress">
+							<div class="progress-bar" role="progress-bar" aria-valuemin="0" aria-valuenow="90" aria-valuemax="100" style="width: 90%;" >
+								90%
+							</div>
+						</div>
+					</div>
+					<div class="stat-box wow fadeInDown" data-wow-delay=".8s">
+						<label> smth</label>
+						<div class="progress">
+							<div class="progress-bar" role="progress-bar" aria-valuemin="0" aria-valuenow="65" aria-valuemax="100" style="width: 65%;" >
+								65%
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="section-something" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center wow fadeInUp">
+					<h2 class="heading-title">smth</h2>
+					<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+ 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="something-details" class="section-padding">
+	
+	
+<div class="container">
+<div class="row">
+    <div class="col-md-12 wow fadeInLeft">
+					
+					<div class="something-inner">
+					<h2 class="heading-title">subtitle to smth</h2>
+						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
+						<br> 
+						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+					</div>
+				</div>
+</div>
+	<div class="row">
+
+        <div class="timeline-centered">
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-success">
+                    <i class="entypo-feather"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>  
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-secondary">
+                    <i class="entypo-suitcase"></i>
+                </div>
+
+                <div class="timeline-label">
+                   <h3 class="something-title">smth</h3>
+                     <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-info">
+                    <i class="entypo-location"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-warning">
+                    <i class="entypo-camera"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>
+
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry begin">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
+                    <i class="entypo-flight"></i> +
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    
+	</div>
+</div>
+	
+<div class="container">
+<div class="row">
+    <div class="col-md-12 wow fadeInLeft">
+					
+					<div class="something-inner">
+					<h2 class="heading-title">another subtitle to smth</h2>
+						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
+						<br> 
+						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+					</div>
+				</div>
+</div>
+	<div class="row">
+
+        <div class="timeline-centered">
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-success">
+                    <i class="entypo-feather"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>  
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-secondary">
+                    <i class="entypo-suitcase"></i>
+                </div>
+
+                <div class="timeline-label">
+                   <h3 class="something-title">smth</h3>
+                     <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-info">
+                    <i class="entypo-location"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon bg-warning">
+                    <i class="entypo-camera"></i>
+                </div>
+
+                <div class="timeline-label">
+                    <h3 class="something-title">smth</h3>
+
+                    <p>smth smth smth</p>
+                </div>
+            </div>
+
+        </article>
+
+
+        <article class="timeline-entry begin">
+
+            <div class="timeline-entry-inner">
+
+                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
+                    <i class="entypo-flight"></i> +
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <a href="#" class="btn btn-default featured">a button</a>
+	</div>
+</div>
+	 
+	</section>
+
+
+	<section id="section-testimonial" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="carousel slide text-center" id="testimonial-carousel">
+						 <ol class="carousel-indicators">
+						    <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+						    <li data-target="#testimonial-carousel" data-slide-to="1"></li>
+						    <li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						  </ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
+
+								<h4 class="client-name">some duuuuuuude</h4>
+							</div>
+							<div class="item">
+								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
+
+								<h4 class="client-name">some other duuuuuude</h4>
+							</div>
+							<div class="item ">
+								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
+
+								<h4 class="client-name">yet another duuuuuuude</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="section-gallery" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center wow fadeInUp">
+					<div class="section-heading">
+						<h2 class="heading-title">Gallery</h2>
+						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. </p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				
+				
+			</div>
+		</div>
+	</section>
+
+
+	<section id="section-contact" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="heading-title">Contact me</h2>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-md-6 col-sm-6 wow fadeInRight">
+					<div class="contact-form">
+						<form class="contact-box">
+							<div class="form-group">
+								<label>Name*</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label>Email address*</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label>Message*</label>
+								<input type="text" class="form-control">
+							</div>
+						</form>
+
+						<div class="row">
+							<div class="col-md-12">
+								<a href="#" class="btn btn-default">Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="col-md-6 col-sm-6 wow fadeInLeft">
+					<div class="contact-left">
+						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+						<ul>
+							<li><span>Email :</span> <a>tsaicharan03@gmail.com</a></li>
+							<li><span>Phone :</span> <a>3462575803</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 
 
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script src="{% static 'js/jquery.sticky.js' %}"></script>
+	<script src="{% static 'js/jquery.singlePageNav.js' %}"></script>
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+
+
+
+
+	<script>
+		 $(".main-nav").sticky();
+	</script>
+
+	<script> 
+        new WOW().init();
+    
+    </script>
+  </body>
 </html>
 {% endblock %}

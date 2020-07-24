@@ -17,7 +17,9 @@
     <link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
-    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
 </head>
 <body>
 <header class="page-header js-header">
@@ -37,10 +39,7 @@
 				<li>
 					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
 				</li>
-					<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'profile'%}">Profile</a>
-				</li>
-
+					
 				<li>
 					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
 				</li>
@@ -52,7 +51,14 @@
 		</div>
 	</header>   
     <!-- $Promo section-->
-    <section style="margin-left:1.5rem;">
+	<section style="margin-left:1.5rem;">
+		
+		<br>
+		<br><br>
+		<br>	<br>
+				<br>
+				<br>
+				<br>
       <h1>Job Name:</h1>
 			<h2>{{ job|get_item:'jobName' }}</h2>
       <div>
@@ -77,12 +83,18 @@
 
       <h1>Volunteer Hours</h1>
       <h2>{{ job.hourly_rate }}<h2>
+
+
+
       <br/>
       <br/>
-      <br/>
+	  <br/>
+	  
+	  <button type="submit" class="btn btn-primary">Register Here To Volunteer</button>
+
     </section>
 
-	
+
    
 </body>
 </html>

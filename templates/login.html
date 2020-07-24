@@ -13,47 +13,59 @@
 {% endif %}
 
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
 </head>
 
 <body>
-		<br>
+    <div id="container-login">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Login
+        </div>
 
-    <a class="btn back-btn" href="/">Back</a>
-    <div class="loginform" id="loginform">
-    <div class="container">
-        <div class="panel">
-            <div class="col login" id="login-form">
+        <form action="/dashboard/" method="post"> {% csrf_token %}
 
-                <a class="btn btn-signup" id="signup-page" href="/signup">Sign Up</a>
-                <!-- <form action="/dashboard/" method="post"> -->
-                 <form action="/dashboard/" method="post"> {% csrf_token %}
-                    <h3>Ready to Login</h3>
-
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" class="form-input" name="email"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-input" name="password"/>
-                    </div>
-                    <button type="submit" class="btn btn-login" id="loginbtn">Login</button>
-                </form>
-
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
             </div>
 
+            <div class="clearfix"></div>
 
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" type="password" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox">
+                <span style="color: #DDD">Remember Me</span>
+            </div>
+
+            <input type="submit" value="Log In"  id="loginbtn"/>
+        </form>
+
+
+        <div class="register">
+            Don't have an account yet?
+            <a href="/signup"><button id="register-link">Register here</button></a>
         </div>
-    </div>
     </div>
 </body>
 

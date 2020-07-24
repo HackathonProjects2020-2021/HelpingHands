@@ -1,7 +1,6 @@
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,400italic,500italic);
 
-
 html{
 	overflow-x: hidden !important;
 	width: 100%;
@@ -55,8 +54,6 @@ a.read-more:hover{
 ul,li{
 	list-style: none;
 }
-
-
 
 body, p{
 	font-family: 'Roboto', sans-serif;
@@ -182,6 +179,7 @@ h2.title span{
 	color: #DCF3FF;
 	font-weight: 600;
 	text-transform: capitalize;
+
 	display: inline-block;
 	padding: 15px 0;
 	font-weight: normal;
@@ -203,6 +201,7 @@ h2.title span{
 .banner-content a.btn-default {
 	padding: 15px 36px!important;
 }
+
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   background-color: #002037;
@@ -285,14 +284,15 @@ h2.title span{
 	margin-bottom: 35px;
 }
 
-#section-skill .btn-default.featured{
+
+#section-stat .btn-default.featured{
 	padding: 15px 36px!important;
 }
-#section-profile{
+#section-about{
 	background: #f2f2f1;
 }
 
-.profile-bg {
+.about-bg {
     background-color: transparent;
     background: url("../images/profile.jpg");
     position: absolute;
@@ -308,11 +308,11 @@ h2.title span{
     background-position: -40px center, 0px center;
     width: 45%;
 }
-.profile-desc{
+.about-desc{
 	margin-bottom: 70px;
 	padding-left: 80px;
 }
-.profile-desc h2{
+.about-desc h2{
 }
 .service-wrapper{
 	padding-left: 80px;
@@ -344,10 +344,10 @@ h2.title span{
 	line-height: 30px;
 }
 
-.skill-box{
+.stat-box{
 	margin-bottom: 25px;
 }
-.skill-box label{
+.stat-box label{
 	text-transform: uppercase;
 	margin-bottom: 4px;
 	font-weight: 600;
@@ -372,12 +372,11 @@ h2.title span{
 }
 
 
-
-#section-resume{
+#section-smth{
 	background: #f2f2f1;
 	position: relative;
 }
-#section-resume:after{
+#section-smth:after{
 	position: absolute;
 	content:"";
 	width: 60px;
@@ -388,23 +387,23 @@ h2.title span{
 	border-radius: 50%;
 }
 
-.resume-inner{}
-.resume-inner{
+.smth-inner{}
+.smth-inner{
 	width: 95%;
 }
-.resume-desc{
+.smth-desc{
 	margin-top: -12px;
 }
-.resume-box{
+.smth-box{
 	margin-bottom: 80px;
 }
-.resume-title{
+.smth-title{
 
 }
-.resume-box.last{
+.smth-box.last{
 	margin-bottom: 0px;
 }
-.resume-sub{
+.smth-sub{
 	margin:-3px 0px 12px;
 }
 .result,.year{
@@ -421,6 +420,7 @@ h2.title span{
 .year{
 	text-transform: capitalize;
 }
+
 
 
 
@@ -461,12 +461,11 @@ h2.title span{
 	margin-bottom: 50px;
 }
 
-
-#section-portfolio
+#section-gallery
 .section-heading{
 	margin-bottom: 100px;
 }
-.portfolio-box{
+.gallery-box{
 	position: relative;
 	margin-bottom: 30px;
 	-webkit-transition: all .4s linear 0s;
@@ -490,7 +489,7 @@ h2.title span{
 	color: #fff;
 	margin-top: 96px;
 }
-.portfolio-box:hover .image-overlay{
+.gallery-box:hover .image-overlay{
 	opacity: 1;
 }
 
@@ -619,6 +618,7 @@ position: absolute;
 display: block;
 width: 4px;
 background: #f5f5f6;
+
 top: 20px;
 bottom: 20px;
 margin-left: 30px;
@@ -842,6 +842,7 @@ margin-bottom: 25px;
 		filter: alpha(opacity=60);
 	}
 
+
 	#section-footer{
 		background: #002037;
 		padding: 50px 0px;
@@ -864,6 +865,7 @@ margin-bottom: 25px;
 	color: #fff;
 }
 
+
 @media (min-width : 1200px) {
 }
 
@@ -871,7 +873,6 @@ margin-bottom: 25px;
 @media (min-width : 992px) {
 
 }
-
 @media (min-width : 768px) and (max-width: 991px) {
 	.banner-content {
 	    padding: 65px 0px;
@@ -907,11 +908,11 @@ margin-bottom: 25px;
 	}
 
 }
+
 @media (max-width : 767px){
 
 	
-}
-
+} 
 @media (max-width : 479px) {
 
 		
@@ -932,7 +933,7 @@ margin-bottom: 25px;
 	}
 
 
-	.profile-desc {
+	.about-desc {
    	 padding-left: 10px;
 	}
 	.service-wrapper {
@@ -942,10 +943,10 @@ margin-bottom: 25px;
 	.service-inner {
 	    width: 100%;
 	}
-	.skill-desc{
+	.stat-desc{
 		margin-bottom: 40px;
 	}
-	.resume-inner{
+	.smth-inner{
 		margin-bottom: 40px;
 	}
 

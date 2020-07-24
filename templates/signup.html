@@ -4,57 +4,69 @@
 </script>
 {% endif %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
 
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Sign Up</title>
-	<script src="https://kit.fontawesome.com/23412c6a8d.js">
-	</script>
-	<link rel="stylesheet" href="../static/css/login.css">
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
 </head>
 
 <body>
-	<br>
-	<a class="btn back-btn" href="/">Back</a>
-	<div class="col signup" id="signup-form">
-		<a type="button" class="btn btn-login" id="login-page" href="/login">Log In</a>
-		<form action="/signup/" method="post"> {% csrf_token %}
-			<h3>Join Us!</h3>
+    <div id="container-register">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Register
+        </div>
 
-			<div class="form-group">
-				<input type="email" placeholder="Email" class="form-input" name="email">
-			</div>
-			<div class="form-group">
-				<input type="number" placeholder="Phone Number" class="form-input" name="phone">
-			</div>
-			<div class="form-group">
-				<input type="text" placeholder="Full Name" class="form-input" name="name">
-			</div>
-			<div class="form-group">
-				<input type="text" placeholder="Username" class="form-input" name="username">
-			</div>
-			<div class="form-group">
-				<input type="password" placeholder="Password" class="form-input" name="password">
-			</div>
-			<div class="form-group">
-				<input type="text" placeholder="Address" class="form-input" name="address1">
-			</div>
-			<div class="form-group">
-				<input type="text" placeholder="City" class="form-input" name="city">
-			</div>
-			<div class="form-group">
-				<input type="text" placeholder="State" class="form-input" name="state">
-			</div>
-			<div class="form-group">
-				<input type="number" placeholder="Zip Code" class="form-input" name="zip_code">
-			</div>
-			<button type="submit" class="btn btn-signup" id="signupbtn">Sign Up</button>
-		</form>
+        <form action="/signup/" method="post"> {% csrf_token %}
 
-	</div>
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">email</i>
+                </div>
+                <input id="email" placeholder="Email" type="email" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" type="password" required class="validate" autocomplete="off">
+            </div>
+
+           
+            <input type="submit" value="Register" />
+        </form>
+
+        
+
+        <div class="register">
+            Do you already have an account?
+            <a href="/login"><button id="register-link">Log In here</button></a>
+        </div>
+    </div>
 </body>
+
+</html>
 {% endblock %}
