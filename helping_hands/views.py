@@ -65,31 +65,20 @@ def logout(request):
 	auth.logout(request)
 	return render(request, 'login.html')
 
-global uid
 def signup(request):
   if request.method == 'POST':
     try:
-      name = request.POST['name']
-      phone = request.POST['phone']
       username = request.POST['username']
       email = request.POST['email']
       password = request.POST['password']
-      address1 = request.POST['address1']
-      city = request.POST['city']
-      state = request.POST['state']
-      zip_code = request.POST['zip_code']
+
       user = fireauth.create_user_with_email_and_password(email, password)
-      # empty fridge initially
       uid = user['localId']
+      # empty fridge initially
       data = {
         'uid': uid,
-        'name': name, 
         'username': username,
-        'address1':address1,
-        'city':city,
-				'state':state,
-        'zip_code':zip_code,
-        'phone': phone, 
+        'email':email
       }
       
       database.child("users").child(uid).set(data)
@@ -164,18 +153,3 @@ def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()
   return render(request, 'job.html', {'job': job})
 
-def contact_form(request):
-    form = ContactForm()
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = f'Message from {form.cleaned_data["name"]}'
-            message = form.cleaned_data["message"]
-            sender = form.cleaned_data["email"]
-            recipients = ['tsaicharan03@gmail.com']
-            try:
-                send_mail(subject, message, sender, recipients, fail_silently=True)
-            except BadHeaderError:
-                return HttpResponse('Invalid header found')
-            return HttpResponse('Success...Your email has been sent')
-    return render(request, 'contact.html', {'form': form})
