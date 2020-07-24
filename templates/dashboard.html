@@ -18,8 +18,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-	<!-- <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"> -->
-	<!-- <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" /> -->
+
 
 </head>
 
@@ -54,7 +53,8 @@
 	</header>
 	
 	<h1>Welcome</h1>
-
+	{% csrf_token %}
+	{{e}}
 	<section class="contact" id="contact">
 		<div class="contact__inner">
    			<h2 class="contact__title">Publish a Job</h2>
@@ -67,7 +67,6 @@
 					<input class="contact__form-input" id="employer" type="text" name="employer" placeholder="Employer Name"> 
 
 					<textarea class="contact__form-tarea" id="description" name="description" placeholder="Job Description"></textarea>
-
 
 					<input class="contact__form-input" id="phone" type="number" name="phone" placeholder="Phone Number"> 
 					

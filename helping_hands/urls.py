@@ -20,6 +20,5 @@ urlpatterns = [
     # path('dashboard/', views.dashboard, name='dashboard'),
 		path('profile/<name>', views.profile, name='profile'),
 		path('job/<name>', views.job, name='job'),
-    # path('contact/', views.contact_form, name='contact'),
-
+    path('contact/', views.contact, name='contact'),
 ]

@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.template.defaulttags import register
 
 
-from .forms import ContactForm
+from helping_hands.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
@@ -41,24 +41,16 @@ def login(request):
 
 
 def dashboard(request):
-  if request.method == 'POST': 
-    try:
-      email = request.POST['email']
-      password = request.POST['password']
+  email=request.POST.get('email')
+  passw = request.POST.get("password")
 
-      user = fireauth.sign_in_with_email_and_password(email, password)
-    except Exception as e:
-      message = "Invalid Credentials"
-      print(e)
-      return render(request, 'login.html', {'msg': message})
+  try:
+    user=fireauth.sign_in_with_email_and_password(email,passw)
+  except:
+    message = "Invalid Credentials"
+    return render(request,"login.html",{"msg":message})
+  return render(request, "dashboard.html",{"e":email})
 
-    print("Login Successful!", user['idToken'][:10])
-    session_id = user['idToken']
-    request.session['uid'] = str(session_id)
-    return render(request, 'dashboard.html')
-  else:
-    print(request.session.get('uid'))
-    return render(request, 'login.html')
 
 
 def logout(request):
@@ -74,7 +66,7 @@ def signup(request):
 
       user = fireauth.create_user_with_email_and_password(email, password)
       uid = user['localId']
-      # empty fridge initially
+
       data = {
         'uid': uid,
         'username': username,
@@ -153,3 +145,45 @@ def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()
   return render(request, 'job.html', {'job': job})
 
+# def contact_form(request):
+#     form = ContactForm()
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             subject = f'Message from {form.cleaned_data["name"]}'
+#             message = form.cleaned_data["message"]
+#             sender = form.cleaned_data["email"]
+#             recipients = ['tsaicharan03@gmail.com']
+#             try:
+#                 send_mail(subject, message, sender, recipients, fail_silently=True)
+#             except BadHeaderError:
+#                 return HttpResponse('Invalid header found')
+#             return HttpResponse('Success...Your email has been sent')
+#     return render(request, 'contact.html', {'form': form})
+
+import smtplib                          
+
+def contact(request):
+  print(request)
+  form = ContactForm()
+  if request.method == 'GET':
+      form = ContactForm(request.POST)
+  else:
+      form=ContactForm(request.POST)
+      if form.is_valid():
+          
+          fromemail = form.cleaned_data['fromemail']
+          subject = form.cleaned_data['subject']
+          message = form.cleaned_data['message']
+
+          # send_mail(subject,message,fromemail,['tsaicharan03@gmail.com',fromemail])
+          smtpServer='localhost:8000'      
+          server = smtplib.SMTP(smtpServer,25)
+          server.ehlo()
+          server.starttls()
+          server.sendmail(fromemail, "tsaicharan03@gmail.com", message) 
+          server.quit()
+
+    #  recipients = ['tsaicharan03@gmail.com']
+
+  return render(request, 'home.html', {'form': form})

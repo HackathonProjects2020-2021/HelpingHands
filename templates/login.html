@@ -17,7 +17,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <meta name="description" content="Login - Register Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,7 +39,7 @@
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input name="username" placeholder="Username" type="text" >
+                <input name="email" placeholder="Email" type="text">
             </div>
 
             <div class="clearfix"></div>
@@ -49,18 +48,13 @@
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input name="password" placeholder="Password" type="password" >
+                <input name="password" placeholder="Password" type="password">
             </div>
 
-             <div class="remember-me">
-                <input type="checkbox">
-                <span style="color: #DDD">Remember Me</span>
-            </div> 
-
+            
             <br>
-            <!-- <input type="submit" value="Log In"  id="loginbtn"/> -->
-            <!-- <input type="submit"  id="loginbtn"/> -->
-            <button type="submit" class="btn btn-login" id="loginbtn">Login</button>
+           
+            <button type="submit" id="loginbtn">Login</button>
 
         </form>
 

@@ -4,9 +4,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-
-
 SECRET_KEY = '*t^cd*-@@mqa36qnq*r&bz%j@($=*_33jxtlv_#0is1v$shwlk'
 
 DEBUG = True
@@ -22,7 +19,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'emailer'
 ]
 
 MIDDLEWARE = [
@@ -121,7 +117,16 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 # EMAIL_HOST_PASSWORD = 'SG.oDN9basdaECvH5asdasw.gXVEgtD1asqSkn-EW'
 
 
-SENDGRID_API_KEY = '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'
+# SENDGRID_API_KEY = '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'
 
-EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+# EMAIL_BACKEND = "sgbackend.SendGridBackend"
+# SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'tsaicharan03@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
+
+
