@@ -18,7 +18,7 @@ After repl.it finishes installing all the dependencies, please click the run but
 
 Next, to run the web application server :
 
-Type: https://HelpingHands--tsaicharan03.repl.co in your browser.
+Open a new browser tab and type: https://HelpingHands--tsaicharan03.repl.co in your browser.
 
 And From there, you'll be able to tour our website
 
