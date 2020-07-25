@@ -8,6 +8,7 @@ urlpatterns = [
   # front-end urls
     path('admin/', admin.site.urls),
 		path('', views.home, name='home'),
+    path('index2/', views.home, name='home'),
     path('login/', views.login, name='login'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', views.logout, name='logout'),

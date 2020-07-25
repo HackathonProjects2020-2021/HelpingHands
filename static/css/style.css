@@ -108,7 +108,7 @@ h5{
 	padding: 20px 19px;
 	border: 2px solid#fff;
 	text-transform: uppercase;
-	border-radius: 0px;
+	border-radius: 10px;
 	font-weight: 700;
 	background: transparent;
 	color: #fff;
@@ -122,7 +122,7 @@ h5{
 	padding: 20px 19px;
 	border: 2px solid#09C3E7;
 	text-transform: uppercase;
-	border-radius: 0px;
+	border-radius: 1px;
 	font-weight: 700;
 	background: transparent;
 	color: #09C3E7;
@@ -143,7 +143,7 @@ h5{
 }
 
 .section-padding{
-	padding: 100px 0px;
+	padding: 90px 0px;
 }
 p{
 	color: #696969;
@@ -294,13 +294,13 @@ h2.title span{
 
 .about-bg {
     background-color: transparent;
-    background: url("../images/profile.jpg");
+    /* background: url("../images/profile.jpg"); */
     position: absolute;
     background-clip: border-box;
     background-attachment: scroll;
     background-origin: padding-box;
     background-repeat: no-repeat;
-    left: 0px;
+    left: 30px;
     top: 0px;
     height: 100%;
     z-index: 2;
@@ -456,7 +456,7 @@ h2.title span{
 }
 
 .client-name{
-	color: #566366;
+	color: #04b4db;
 	text-transform: uppercase;
 	margin-bottom: 50px;
 }
@@ -739,7 +739,7 @@ box-sizing: border-box;
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
 background: #fff;
-color: #737881;
+color: #818073;
 display: block;
 width: 40px;
 height: 40px;
@@ -955,4 +955,16 @@ margin-bottom: 25px;
 	}
 
 
+}
+  
+.site-header .navbar-nav .nav-link {
+color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+font-weight: 500;
 }

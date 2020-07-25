@@ -10,18 +10,16 @@
     
     <title>Helping Hands</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/prettyphoto.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 
   </head>
    <body data-spy="scroll" data-target=".main-nav">
-	   
     
     <section id="section-banner">
     	<div class="container">
@@ -30,19 +28,11 @@
     				<h2 class="title"> 
 	    					Helping Hands<br/>
 							<span>
-							Find oppurtunites to volunteer in your community <br/> 
-							Look for volunteers in your community </span>
+				text <br/> 
+							text	</span>
     				</h2>
 
-    				<a href="/login" class="btn btn-default" style="font-size: 18px;
-					line-height: 24px;
-					padding: 20px 19px;
-					border: 2px solid#fff;
-					text-transform: uppercase;
-					border-radius: 0px;
-					font-weight: 700;
-					background: transparent;
-					color: #fff;">Login/Sign Up</a>
+    				<a href="/login" class="btn btn-default">Login/Sign Up</a>
     			</div>
     		</div>
     	</div>
@@ -50,25 +40,32 @@
 
 
     <section class="section-menu">
-    	<header class="site-header">
-			<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-			  <div class="container" style="color:black">
-				<li class="active"><a class="nav-item nav-link" href="#section-banner" style="color:black">Home </a></li>
-				<li class="active"><a class="nav-item nav-link" href="#section-about" style="color:black">About us </a></li>
-				<li><a class="nav-item nav-link" href="#section-stat" style="color:black">Stats </a></li>
-				<li><a class="nav-item nav-link" href="#section-something" style="color:black">something   </a></li>
-				<li><a class="nav-item nav-link" href="#section-testimonial" style="color:black">Testimonials </a></li>
-				<li><a class="nav-item nav-link" href="#section-gallery" style="color:black">Gallery </a></li>
-				<li><a class="nav-item nav-link" href="#section-contact" style="color:black">Contact us </a></li>
-				<div class="collapse navbar-collapse" id="navbarToggle" style="color:black">
-					<div class="navbar-nav mr-auto">
-				 	</div>
-		  		</div>
-			  </div>
-			</nav>
-		  </header>
-	</section>
-	
+    	<div class="navbar navbar-default main-nav" role="navigation" >
+    		<div class="container" >
+    			<div class="navbar-header">
+    				<button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
+    					<span class="sr-only"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+				
+					<a href="/home" class="navbar-brand">Helping Hands</a>
+    			</div> 
+    			<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+    				<ul class="nav navbar-nav navbar-right">
+    					<li class="active"><a href="#section-banner">Home </a></li>
+    					<li><a href="#section-about">About us </a></li>
+    					<li><a href="#section-stat">Stats </a></li>
+    					<li><a href="#section-something">something </a></li>
+    					<li><a href="#section-testimonial">Testimonials </a></li>
+    					<li><a href="#section-gallery">Gallery </a></li>
+    					<li><a href="#section-contact">Contact us </a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    </section>
  <section id="section-overview" class="section-padding">
 		<div class="container">
 			<div class="row">
@@ -116,7 +113,7 @@
 						 <h2 class="section-title uppercase">Connecting People</h2>
 <br/>
                                     <p>
-										Are you trying to find oppurtunites to serve your community? Perhaps a highschool student looking to me
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
                                     </p>
  <br/>
  
@@ -472,51 +469,6 @@
 						<img src="{% static '/images/gallery/gallery_pic1.jpg' %}" alt="" class="img-responsive">
 						<div class="image-overlay text-center">
 							<a href="{% static '/images/gallery/gallery_pic1.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
-						</div>
-					</div>
-				</div> 
-
-				<div class="col-md-4 col-sm-4">
-					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic2.jpg' %}" alt="" class="img-responsive">
-						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic2.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
-						</div>
-					</div>
-				</div> 
-				
-				<div class="col-md-4 col-sm-4">
-					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic3.jpg' %}" alt="" class="img-responsive">
-						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic3.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
-						</div>
-					</div>
-				</div> 
-
-				<div class="col-md-4 col-sm-4">
-					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic4.jpg' %}" alt="" class="img-responsive">
-						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic4.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
-						</div>
-					</div>
-				</div> 
-
-				<div class="col-md-4 col-sm-4">
-					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic5.jpg' %}" alt="" class="img-responsive">
-						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic5.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
-						</div>
-					</div>
-				</div> 
-				
-				<div class="col-md-4 col-sm-4">
-					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic6.jpg' %}" alt="" class="img-responsive">
-						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic6.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
 						</div>
 					</div>
 				</div> 
