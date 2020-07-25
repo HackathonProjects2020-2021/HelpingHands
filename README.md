@@ -7,19 +7,20 @@
 ## Features
 - **Login and Sign Up**
 
-![](img/screenshot.PNG)
 
 ## Instructions
-Run the following commands to install dependencies:
+Run the following commands to install dependencies by typing this statement in the repl.it console:
 ```
-pip3 install django
-pip3 install pyrebase
+pip install -r requirements.txt
 ```
-To run the web application server:
-```
-python3 manage.py runserver
-```
-Then go to http://127.0.0.1:8000/ to check it out in development mode.
+
+After repl.it finishes installing all the dependencies, please click the run button which will deploy.
+
+Next, to run the web application server :
+
+Type: https://HelpingHands--tsaicharan03.repl.co in your browser.
+
+And From there, you'll be able to tour our website
 
 ## Technology
 - HTML5
