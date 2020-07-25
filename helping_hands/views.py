@@ -140,8 +140,9 @@ def ownprofile(request):
       profile =  database.child("users").child(uid).get().val()
       myjobs =  database.child("users").child(uid).child("applications").get().val()
       deletelist = {}
-      for key in myjobs:
-        deletelist[key] = "/delete/"+key.replace(" ", "%20")
+      if myjobs:
+        for key in myjobs:
+          deletelist[key] = "/delete/"+key.replace(" ", "%20")
       print(deletelist)
       return render(request, 'ownprofile.html', {'profile': profile, 'myjobs': myjobs, 'deletelist': deletelist})
   else:
@@ -178,9 +179,9 @@ def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()
   action = '/apply/'+job['jobName'].replace(" ", "%20")
   #if (request.session.get('sid')):
-
   return render(request, 'job.html', {'job': job, 'action':action})
   
+
 def apply(request, name):
   try:
     uid = request.session.get('uid')
@@ -191,6 +192,7 @@ def apply(request, name):
       return redirect("/login/")
   return redirect(f"/job/{name}")
 
+
 def delete(request, name):
   try:
     uid = request.session.get('uid')
@@ -198,6 +200,8 @@ def delete(request, name):
   except:
     return redirect('/login/')
   return redirect("/profile")
+
+
 def contact(request):
     return render(request, 'contact.html')
 

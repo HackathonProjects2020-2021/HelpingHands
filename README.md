@@ -7,6 +7,7 @@
 ## Features
 - **Login and Sign Up**
 
+![](img/screenshot.PNG)
 
 ## Instructions
 Run the following commands to install dependencies:
