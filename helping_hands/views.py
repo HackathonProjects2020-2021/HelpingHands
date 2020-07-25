@@ -191,6 +191,13 @@ def apply(request, name):
       return redirect("/login/")
   return redirect(f"/job/{name}")
 
+def delete(request, name):
+  try:
+    uid = request.session.get('uid')
+    database.child("users").child(uid).child("applications").child(name).remove()
+  except:
+    return redirect('/login/')
+  return redirect("/profile")
 def contact(request):
     return render(request, 'contact.html')
 

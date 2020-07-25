@@ -22,6 +22,6 @@ urlpatterns = [
     path('update/', views.updateprofile, name='update'),
 		path('job/<name>', views.job, name='job'),
     path('apply/<name>', views.apply, name='apply'),
-    #path('delete/<name>', views.delete, name='delete'),
+    path('delete/<name>', views.delete, name='delete'),
     path('contact/', views.contact, name='contact'),
 ]
