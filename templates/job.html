@@ -59,39 +59,31 @@
 				<br>
 				<br>
 				<br>
-      <h1>Job Name:</h1>
-			<h2>{{ job|get_item:'jobName' }}</h2>
+      <h2>Job Name:</h2>
+			<h3>{{ job|get_item:'jobName' }}</h3>
       <div>
 				<!-- <h2>By {{ job|get_item:'employer' }}</h2> -->
 				<br>
 				<br>
 
-				<h1>Job Employer:</h2>
-				<h2>{{ job.employer }}<h3>
+				<h2>Job Employer:</h2>
+				<h3>{{ job.employer }}</h3>
 
 				<br>
 				<br>
 
-				<h1>Job Description:<h1>
-				<h2>{{ job.description }}</h2>
-			</div>
+				<h2>Job Description:</h2>
+				<h3>{{ job.description }}</h3>
+				</div>
+				<br>
+				<br>
 
-      
-     
-     <br>
-		 <br>
-
-      <h1>Volunteer Hours</h1>
-      <h2>{{ job.hourly_rate }}<h2>
-
-
-
-      <br/>
-      <br/>
-	  <br/>
-	  
-	  <button type="submit" class="btn btn-primary">Register Here To Volunteer</button>
-
+				<h2>Volunteer Hours</h2>
+				<h3>{{ job.hourly_rate }}</h3>
+				<br/>
+				<form action={{action}} method="POST">
+	  			<button type="submit" class="btn btn-primary">Volunteer for this Job</button>
+				</form>
     </section>
 
 

@@ -92,11 +92,26 @@
                     <i class="material-icons">location_on</i>
                 </div>
                 <input name="state" value="{{profile.state}}" type="text">
-            </div>
+			</div>
 
-           <br>
-           <button type="submit" id="updatebtn" class="page-header__nav-link js-anchor js-link is-active">Update</button>
-        </form>
+			<button type="submit" id="updatebtn" class="page-header__nav-link js-anchor js-link is-active">Update</button>
+
+			<br>
+			<br>
+			<br>
+			<br><br>
+			<br>
+		</form>
+
+		<h3>My Job Applications</h3>
+			{% for key in myjobs %}
+				<h5> --{{key}} </h5><span><h7><a href={{deletelist|get_item:key}}>Delete Job Application </a></span></h7>
+				
+				<br>
+				<br>
+				<br>
+			{% endfor %}
+        <br>
     </section>
    
 </body>

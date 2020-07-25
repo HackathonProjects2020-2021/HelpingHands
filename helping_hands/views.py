@@ -107,6 +107,7 @@ def publishJob(request):
       'phone': phone,
       'description': jdesc,
       'hourly_rate': hrate,
+      'employeruid': request.session.get('uid')
     }
 
     print(data)
@@ -137,10 +138,12 @@ def ownprofile(request):
       print(uid)
       print("\nUser", uid, "landed to their own profile.\n")
       profile =  database.child("users").child(uid).get().val()
-      #for info in userinfo:
-        #data[info.key()] = info.val()
-      print(profile)
-      return render(request, 'ownprofile.html', {'profile':profile})
+      myjobs =  database.child("users").child(uid).child("applications").get().val()
+      deletelist = {}
+      for key in myjobs:
+        deletelist[key] = "/delete/"+key.replace(" ", "%20")
+      print(deletelist)
+      return render(request, 'ownprofile.html', {'profile': profile, 'myjobs': myjobs, 'deletelist': deletelist})
   else:
     return redirect('/login/')
 
@@ -173,28 +176,22 @@ def publicprofile(request, name):
 
 def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()
-  return render(request, 'job.html', {'job': job})
+  action = '/apply/'+job['jobName'].replace(" ", "%20")
+  #if (request.session.get('sid')):
 
-# def contact_form(request):
-#     form = ContactForm()
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             subject = f'Message from {form.cleaned_data["name"]}'
-#             message = form.cleaned_data["message"]
-#             sender = form.cleaned_data["email"]
-#             recipients = ['tsaicharan03@gmail.com']
-#             try:
-#                 send_mail(subject, message, sender, recipients, fail_silently=True)
-#             except BadHeaderError:
-#                 return HttpResponse('Invalid header found')
-#             return HttpResponse('Success...Your email has been sent')
-#     return render(request, 'contact.html', {'form': form})
+  return render(request, 'job.html', {'job': job, 'action':action})
+  
+def apply(request, name):
+  try:
+    uid = request.session.get('uid')
+    database.child("users").child(uid).child("applications").child(name).set(name)
 
-import smtplib                          
+    #send email
+  except:
+      return redirect("/login/")
+  return redirect(f"/job/{name}")
 
 def contact(request):
     return render(request, 'contact.html')
-
 
 

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #DJANGO WHITENOISE CONFIGURATION
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,29 +99,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-# SENDGRID_API_KEY = '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'
 
-# EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-# SENDGRID_SANDBOX_MODE_IN_DEBUG=False
-
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER= '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'
-# EMAIL_HOST_PASSWORD= ' '
-
-
-# Email
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIT_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = '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'
-# EMAIL_HOST_PASSWORD = 'SG.oDN9basdaECvH5asdasw.gXVEgtD1asqSkn-EW'
-
-
-# SENDGRID_API_KEY = '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'
-
-# EMAIL_BACKEND = "sgbackend.SendGridBackend"
-# SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -130,3 +109,18 @@ EMAIL_HOST_USER = 'tsaicharan03@gmail.com'
 EMAIL_HOST_PASSWORD = 'password'
 
 
+
+
+if os.getcwd() == '/app':
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+    #Honor the 'X-forwarded-Proto' header for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    #Allow all host headers
+    ALLOWED_HOSTS = ['helpingxhands.herokuapp.com']
+    DEBUG = True
+
+    #Static asset configuration
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
