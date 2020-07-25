@@ -46,6 +46,11 @@ def dashboard(request):
 
   try:
     user=fireauth.sign_in_with_email_and_password(email,passw)
+    session_id = user['idToken']
+    request.session['sid'] = str(session_id)
+    uid = user['localId']
+    request.session['uid'] = uid
+    request.session.modified = True
   except:
     message = "Invalid Credentials"
     return render(request,"login.html",{"msg":message})
@@ -60,17 +65,22 @@ def logout(request):
 def signup(request):
   if request.method == 'POST':
     try:
-      username = request.POST['username']
+      fullname = request.POST['fullname']
       email = request.POST['email']
       password = request.POST['password']
+      city = request.POST['city']
+      state = request.POST['state']
 
       user = fireauth.create_user_with_email_and_password(email, password)
       uid = user['localId']
 
       data = {
         'uid': uid,
-        'username': username,
-        'email':email
+        'fullname': fullname,
+        'email':email,
+        'state': state,
+        'city': city,
+
       }
       
       database.child("users").child(uid).set(data)
@@ -119,13 +129,47 @@ def jobList(request):
 	return render(request, 'jobList.html', {"dic":dic})
 
 
-#@login_required
-def profile(request, name):
-  try:
-    profile = database.child('users').child(name).get().val()
-    return render(request, 'profile.html', {'profile': profile})
-  except:
-    return render(request, 'login.html')
+def ownprofile(request):
+  if (request.session.get('sid')):
+      #data = {}
+      print(1)
+      uid = request.session.get('uid')
+      print(uid)
+      print("\nUser", uid, "landed to their own profile.\n")
+      profile =  database.child("users").child(uid).get().val()
+      #for info in userinfo:
+        #data[info.key()] = info.val()
+      print(profile)
+      return render(request, 'ownprofile.html', {'profile':profile})
+  else:
+    return redirect('/login/')
+
+
+def updateprofile(request):
+  if request.method == 'POST':
+    fullname = request.POST['fullname']
+    email = request.POST['email']
+    city = request.POST['city']
+    state = request.POST['state']
+    uid = request.session.get('uid')
+
+    data = {
+      'fullname': fullname, 
+      'email': email,
+      'city': city,
+      'state': state,
+      'uid': uid,
+    }
+
+    print(data)
+    database.child("users").child(uid).set(data)
+  return redirect('/profile/')
+
+
+def publicprofile(request, name):
+  profile = database.child('users').child(name).get().val()
+  return render(request, 'publicprofile.html', {'profile': profile})
+
 
 def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()
@@ -150,26 +194,7 @@ def job(request, name):
 import smtplib                          
 
 def contact(request):
-  print(request)
-  form = ContactForm()
-  if request.method == 'GET':
-      form = ContactForm(request.POST)
-  else:
-      form=ContactForm(request.POST)
-      if form.is_valid():
-          
-          fromemail = form.cleaned_data['fromemail']
-          subject = form.cleaned_data['subject']
-          message = form.cleaned_data['message']
+    return render(request, 'contact.html')
 
-          # send_mail(subject,message,fromemail,['tsaicharan03@gmail.com',fromemail])
-          smtpServer='localhost:8000'      
-          server = smtplib.SMTP(smtpServer,25)
-          server.ehlo()
-          server.starttls()
-          server.sendmail(fromemail, "tsaicharan03@gmail.com", message) 
-          server.quit()
 
-    #  recipients = ['tsaicharan03@gmail.com']
 
-  return render(request, 'home.html', {'form': form})

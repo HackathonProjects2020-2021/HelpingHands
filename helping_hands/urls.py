@@ -19,7 +19,9 @@ urlpatterns = [
     path('publishJob/',views.publishJob,name="publishJob"),
     path('jobList/',views.jobList,name="jobList"),
     # path('dashboard/', views.dashboard, name='dashboard'),
-		path('profile/<name>', views.profile, name='profile'),
+		path('profile/', views.ownprofile, name='ownprofile'),
+    path('profile/<name>', views.publicprofile, name='publicprofile'),
+    path('update/', views.updateprofile, name='update'),
 		path('job/<name>', views.job, name='job'),
     path('contact/', views.contact, name='contact'),
 ]

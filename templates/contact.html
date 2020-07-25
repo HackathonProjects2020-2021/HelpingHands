@@ -1,71 +1,63 @@
+{%load static%}
 
 {% block content %}
 
-<style>
-        .container{
-             padding-top: 15px;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Helping</span>Hands</h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Helping Hands</h3>
+        <ul>
+          <li><i class="fa fa-phone"></i> (346) 257-5803</li>
+          <li><i class="fa fa-envelope"></i> test@helping_hands.com</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Email Us</h3>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    #id_name{
-        width:100%
-        }
-
-    #id_message{
-        width:100%
-        }
-
-    #id_email{
-        width:100%
-        }
-</style>
-	<header class="page-header js-header">
-		<div class="page-header__inner">
-			<div class="page-header__logo">
-			<h1>Default</h1>
-			&nbsp;<span>Web</span>
-			</div>
-			<nav class="page-header__nav js-nav">
-			<ul>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
-				</li>
-					<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
-				</li>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
-				</li>
-
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
-				</li>
-				
-          </form>
-				</li>
-			</ul>
-			</nav>
-		</div>
-	</header>
-<div class="container ">
-    <h2>Send Us a Message</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-        {% endfor %}
-
-        {% for field in form.visible_fields %}
-        <div class="form-group">
-            {{ field.errors }}
-            <label>{{ field.label_tag }}</label>
-            <p>{{ field }}</p>
-        </div>
-        {% endfor %}
-        <button type="reset" class="btn btn-secondary">Reset</button>
-         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-
-
-{% endblock content %}
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>
+{% endblock %}

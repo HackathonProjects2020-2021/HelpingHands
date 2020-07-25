@@ -1,57 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Dashboard</title>
-	<meta name="description" content="Page-specific description">
-	<meta name="keywords" content="Page-specific keywords">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
-	<link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
-	<link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
-	<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<title>Helping Hands</title>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{ static '/css/bootstrap.min.css' %}" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/prettyphoto.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+		<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
 
 </head>
 
 <body>
-	<header class="page-header js-header">
-		<div class="page-header__inner">
-			<div class="page-header__logo">
-			<h1>Default</h1>
-			&nbsp;<span>Web</span>
-			</div>
-			<nav class="page-header__nav js-nav">
-			<ul>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
-				</li>
-					<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
-				</li>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
-				</li>
-
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
-				</li>
-				
-          </form>
-				</li>
-			</ul>
+	<section class="section-menu">
+    	<header class="site-header">
+			<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+			  <div class="container" style="color:black; font-weight: bold;">
+				<li class="active"><a class="nav-item nav-link" href="/" style="color:black">Home </a></li>
+				<li class="active"><a class="nav-item nav-link" href="/#section-about" style="color:black">About us </a></li>
+				<li><a class="nav-item nav-link" href="/#section-stat" style="color:black">Stats </a></li>
+				<li><a class="nav-item nav-link" href="/#section-getstarted" style="color:black">Get Started </a></li>
+				<!-- <li><a class="nav-item nav-link" href="#section-testimonial" style="color:black">Testimonials </a></li> -->
+				<li><a class="nav-item nav-link" href="/#section-gallery" style="color:black">Gallery </a></li>
+				<!-- <li><a class="nav-item nav-link" href="/jobList" style="color:black">Jobs List </a></li> -->
+				<li><a class="nav-item nav-link" href="/contact" style="color:black">Contact </a></li>
+				<!-- <li><a class="nav-item nav-link" href="/dashboard" style="color:black">Dashboard </a></li> -->
+				<!-- <li><a class="nav-item nav-link" href="/profile" style="color:black">Profile </a></li> -->
+				<div class="collapse navbar-collapse" id="navbarToggle" style="color:black">
+					<div class="navbar-nav mr-auto">
+				 	</div>
+		  		</div>
+			  </div>
 			</nav>
-		</div>
-	</header>
-	
+		  </header>
+	</section>
+	<section class="section-padding">
 	<h1>Welcome</h1>
 	{% csrf_token %}
 	{{e}}
@@ -77,6 +69,7 @@
         </form>
 		</div>
 
+	</section>
 	</section>
 </body>
 </html>

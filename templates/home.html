@@ -11,7 +11,7 @@
     <title>Helping Hands</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet"> 
+	<link href="{ static '/css/bootstrap.min.css' %}" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/prettyphoto.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -56,13 +56,11 @@
 				<li class="active"><a class="nav-item nav-link" href="#section-banner" style="color:black">Home </a></li>
 				<li class="active"><a class="nav-item nav-link" href="#section-about" style="color:black">About us </a></li>
 				<li><a class="nav-item nav-link" href="#section-stat" style="color:black">Stats </a></li>
-				<li><a class="nav-item nav-link" href="#section-getstarted" style="color:black">Get Started   </a></li>
-				<!-- <li><a class="nav-item nav-link" href="#section-testimonial" style="color:black">Testimonials </a></li> -->
+				<li><a class="nav-item nav-link" href="#section-getstarted" style="color:black">Get Started </a></li>
+				<li><a class="nav-item nav-link" href="#section-testimonial" style="color:black">Testimonials </a></li>
 				<li><a class="nav-item nav-link" href="#section-gallery" style="color:black">Gallery </a></li>
-				<li><a class="nav-item nav-link" href="#section-contact" style="color:black">Contact us </a></li>
-				<li><a class="nav-item nav-link" href="/jobList" style="color:black">Jobs List </a></li>
-				<li><a class="nav-item nav-link" href="/dashboard" style="color:black">Dashboard </a></li>
-				<li><a class="nav-item nav-link" href="/profile" style="color:black">Profile </a></li>
+				<li><a class="nav-item nav-link" href="/contact" style="color:black">Contact </a></li>
+
 				<div class="collapse navbar-collapse" id="navbarToggle" style="color:black">
 					<div class="navbar-nav mr-auto">
 				 	</div>
@@ -72,42 +70,7 @@
 		  </header>
 	</section>
 	
- <!-- <section id="section-overview" class="section-padding">
-		<div class="container">
-			<div class="row">
-						<div class="service-wrapper">
-							<div class="service-inner wow fadeInRight" data-wow-delay=".2s">
-								<i class="fa fa-users"></i>
-								<div class="service-box">
-									<h3>smth</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
-								</div>
-							</div>
-							<div class="service-inner wow fadeInRight" data-wow-delay=".5s">
-								<i class="fa fa-bank"></i>
-								<div class="service-box">
-									<h3>smth</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
-								</div>
-							</div>  
-							<div class="service-inner wow fadeInRight" data-wow-delay=".8s">
-								<i class="fa fa-pencil"></i>
-								<div class="service-box">
-									<h3>smth</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
-								</div>
-							</div>
-							<div class="service-inner wow fadeInRight" data-wow-delay="1.1s">
-								<i class="fa fa-globe"></i>
-								<div class="service-box">
-									<h3>smth</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
-								</div>
-							</div>  
-						</div>
-					</div>
-		</div>
-	</section> -->
+
 
 
 	<section id="section-about" class="section-padding">
@@ -230,219 +193,8 @@
 		</div>
 	</section>
 
-	<!-- <section id="something-details" class="section-padding">
-	
-	
-<div class="container">
-<div class="row">
-    <div class="col-md-12 wow fadeInLeft">
-					
-					<div class="something-inner">
-					<h2 class="heading-title">subtitle to smth</h2>
-						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
-						<br> 
-						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
-					</div>
-				</div>
-</div>
-	<div class="row">
 
-        <div class="timeline-centered">
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-success">
-                    <i class="entypo-feather"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>  
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-secondary">
-                    <i class="entypo-suitcase"></i>
-                </div>
-
-                <div class="timeline-label">
-                   <h3 class="something-title">smth</h3>
-                     <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-info">
-                    <i class="entypo-location"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-warning">
-                    <i class="entypo-camera"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>
-
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry begin">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
-                    <i class="entypo-flight"></i> +
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-    
-	</div>
-</div>
-	
-<div class="container">
-<div class="row">
-    <div class="col-md-12 wow fadeInLeft">
-					
-					<div class="something-inner">
-					<h2 class="heading-title">another subtitle to smth</h2>
-						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. 
-						<br> 
-						Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
-					</div>
-				</div>
-</div>
-	<div class="row">
-
-        <div class="timeline-centered">
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-success">
-                    <i class="entypo-feather"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>  
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-secondary">
-                    <i class="entypo-suitcase"></i>
-                </div>
-
-                <div class="timeline-label">
-                   <h3 class="something-title">smth</h3>
-                     <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-info">
-                    <i class="entypo-location"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon bg-warning">
-                    <i class="entypo-camera"></i>
-                </div>
-
-                <div class="timeline-label">
-                    <h3 class="something-title">smth</h3>
-
-                    <p>smth smth smth</p>
-                </div>
-            </div>
-
-        </article>
-
-
-        <article class="timeline-entry begin">
-
-            <div class="timeline-entry-inner">
-
-                <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
-                    <i class="entypo-flight"></i> +
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-    <a href="#" class="btn btn-default featured">a button</a>
-	</div>
-</div>
-	 
-	</section> -->
-
-
-	<!-- <section id="section-testimonial" class="section-padding">
+	<section id="section-testimonial" class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -453,27 +205,22 @@
 						    <li data-target="#testimonial-carousel" data-slide-to="2"></li>
 						  </ol>
 						<div class="carousel-inner">
-							<div class="item active">
-								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
-
-								<h4 class="client-name">some duuuuuuude</h4>
-							</div>
 							<div class="item">
-								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
+								<p>“ This is a great way to change students' perspectives of volunteering by helping people within their community ”</p>
 
-								<h4 class="client-name">some other duuuuuude</h4>
+								<h4 class="client-name">Teachers & Parents</h4>
 							</div>
 							<div class="item ">
-								<p>“ Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam. ”</p>
+								<p>“ I get to meet new students each time I have something I need to get done and I just can't help but thank HelpingHands for the service ”</p>
 
-								<h4 class="client-name">yet another duuuuuuude</h4>
+								<h4 class="client-name">A Person who used our service/website</h4>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	
 	<section id="section-gallery" class="section-padding">
@@ -482,7 +229,7 @@
 				<div class="col-md-12 text-center wow fadeInUp">
 					<div class="section-heading">
 						<h2 class="heading-title">Gallery</h2>
-						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. </p>
+						<p>Pictures of some jobs</p>
 					</div>
 				</div>
 			</div>
@@ -508,36 +255,36 @@
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic3.jpg' %}" alt="" class="img-responsive">
+						<img src="{% static '/images/gallery/snowshoveling.jpg' %}" alt="" class="img-responsive">
 						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic3.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
+							<a href="{% static '/images/gallery/snowshoveling.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
 						</div>
 					</div>
 				</div> 
 
 				<div class="col-md-4 col-sm-4">
 					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic4.jpg' %}" alt="" class="img-responsive">
+						<img src="{% static '/images/gallery/shoppimng.jpg' %}" alt="" class="img-responsive">
 						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic4.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
+							<a href="{% static '/images/gallery/shoppimng.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
 						</div>
 					</div>
 				</div> 
 
 				<div class="col-md-4 col-sm-4">
 					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic5.jpg' %}" alt="" class="img-responsive">
+						<img src="{% static '/images/gallery/studs.jpeg' %}" alt="" class="img-responsive">
 						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic5.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
+							<a href="{% static '/images/gallery/studs.jpeg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
 						</div>
 					</div>
 				</div> 
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="gallery-box">
-						<img src="{% static '/images/gallery/gallery_pic6.jpg' %}" alt="" class="img-responsive">
+						<img src="{% static '/images/gallery/gallery_pic9.jpg' %}" alt="" class="img-responsive">
 						<div class="image-overlay text-center">
-							<a href="{% static '/images/gallery/gallery_pic6.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
+							<a href="{% static '/images/gallery/gallery_pic9.jpg' %}" data-rel="prettyPhoto"><i class="fa fa-arrows-alt"></i></a>
 						</div>
 					</div>
 				</div> 
@@ -548,60 +295,21 @@
 	</section>
 
 
-	<section id="section-contact" class="section-padding">
+	<footer id="section-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<h2 class="heading-title">Contact me</h2>
-				</div>
-			</div>
-			<div class="row">
-
-				<div class="col-md-6 col-sm-6 wow fadeInRight">
-					<div class="contact-form">
-
-						<form class="contact-box" action="/contact/" method="POST">
-							{% csrf_token %}
-
-							
-
-							<div class="form-group">
-								<label>Email address*</label>
-								<input  name ="fromemail" type="text" class="form-control">
-							</div>
-
-							
-							<div class="form-group">
-								<label>Subject*</label>
-								<input  name ="subject" type="text" class="form-control">
-							</div>
-
-							<div class="form-group">
-								<label>Message*</label>
-								<input name = "message" type="text" class="form-control">
-							</div>
-						</form>
-
-						<div class="row">
-							<div class="col-md-12">
-								<!-- <a href="" class="btn btn-default">Contact Us</a> -->
-							<button type="submit" value="Send" class="btn btn-default">Send</button>
-							</div>
-						</div>
-					</div>
-				</div>
-					<div class="col-md-6 col-sm-6 wow fadeInLeft">
-					<div class="contact-left">
-						<p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
-						<ul>
-							<li><span>Email :</span> <a>tsaicharan03@gmail.com</a></li>
-							<li><span>Phone :</span> <a>(346)-257-5803</a></li>
-						</ul>
-					</div>
+				<div class="col-md-12 text-center">
+					<ul class="socail-link list-inline">
+						<li><a href="twitter.com"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="facebook.com"><i class="fa fa-facebook"></i></a></li> 
+						<li><a href="github.com"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<h4>Copyright © 2020, Website by Infinite Computing SS</h4>
 				</div>
 			</div>
 		</div>
-	</section>
+	</footer>
+
 
 
 

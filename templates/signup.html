@@ -29,12 +29,26 @@
         </div>
 
         <form action="/signup/" method="post"> {% csrf_token %}
-
+            
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">email</i>
                 </div>
                 <input name="email" placeholder="Email" type="email" >
+            </div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">location_on</i>
+                </div>
+                <input name="city" placeholder="City" type="text">
+            </div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">location_on</i>
+                </div>
+                <input name="state" placeholder="State" type="text">
             </div>
 
             <div class="clearfix"></div>
@@ -43,7 +57,7 @@
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input name="username" placeholder="Username" type="text" >
+                <input name="fullname" placeholder="Full Name" type="text" >
             </div>
 
             <div class="clearfix"></div>
@@ -60,7 +74,8 @@
         </form>
 
         
-
+        <br>
+        <br>
         <div class="register">
             Do you already have an account?
             <a href="/login"><button id="register-link">Log In here</button></a>

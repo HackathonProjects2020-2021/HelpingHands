@@ -55,31 +55,25 @@
 		</div>
 	</header>   
     <!-- $Promo section-->
-    <section style="margin-left:1.5rem;">
-      <h1>Full Name:</h1>
-			<h2>{{ profile.name }}</h2>
-      	
-			<br>
-			<br>
-
-			<h1>Phone Number:</h2>
-			<h2>{{ profile.phone }}<h3>
-
-			<br>
-			<br>
-
-			<h1>Address:<h1>
-			<h2>{{ profile.address1 }}  {{ profile.zip_code }}</h2>
+    <section style="margin-left:2.5rem;">
+		<h2>Full Name:</h2>
+			  <h3>{{ profile.fullname }}</h3>
 			
-			<br>
-			<br>
-
-      <h1>Location</h1>
-      <h2>{{ profile.city }}, {{ profile.state}}<h2>
-      <br/>
-      <br/>
-      <br/>
-    </section>
+			  <br>
+			  <br>
+  
+			  <h2>Email:</h2>
+			  <h3>{{ profile.email }}<h3>
+  
+			  <br>
+			  <br>
+  
+			  <h2>Location</h2>
+			  <h3>{{ profile.city }}, {{ profile.state}}<h3>
+			  <br/>
+			  <br/>
+			  <br/>
+	  </section>
 </body>
 </html>
 {% endblock content %}
