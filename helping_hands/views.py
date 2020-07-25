@@ -121,25 +121,11 @@ def jobList(request):
 
 #@login_required
 def profile(request, name):
-	'''
-	data = {}
-	try:
-		#uid = request.session.get('localId')
-		print(uid)
-		userinfo = database.child('users').child(uid).get()
-		
-		for info in userinfo.each():
-			data[info.key()] = info.val()
-
-	except Exception as e:
-		print(e)
-		# print("hello")
-
-		pass
-	return render(request, 'profile.html', {"data":data})
-	'''
-	profile = database.child('users').child(name).get().val()
-	return render(request, 'profile.html', {'profile': profile})
+  try:
+    profile = database.child('users').child(name).get().val()
+    return render(request, 'profile.html', {'profile': profile})
+  except:
+    return render(request, 'login.html')
 
 def job(request, name):
   job = database.child('jobsCreated').child(name).get().val()

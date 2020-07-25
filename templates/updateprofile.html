@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>update profile</title>
+    <meta name="description" content="Page-specific description">
+    <meta name="keywords" content="Page-specific keywords">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
+    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+</head>
+<body>
+	<header class="page-header js-header">
+		<div class="page-header__inner">
+			<div class="page-header__logo">
+			<h1>Default</h1>
+			&nbsp;<span>Web</span>
+			</div>
+			<nav class="page-header__nav js-nav">
+			<ul>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
+				</li>
+					<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
+				</li>
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
+				</li>
+
+				<li>
+					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
+				</li>
+				
+          </form>
+				</li>
+			</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="contact__inner">
+   			<h2 class="contact__title">Publish a Job</h2>
+   			<p class="contact__descr">Publish a Job You Need Help With</p>
+   			<!-- Publish Job Form -->
+        <form class="contact__form" action="/updateprofile/" method="post" enctype="multipart/form-data">{% csrf_token %}
+					
+   					<input class="contact__form-input" id="jobName" type="text" name="jobName" placeholder="Job">
+
+					<input class="contact__form-input" id="employer" type="text" name="employer" placeholder="Employer Name"> 
+
+					<textarea class="contact__form-tarea" id="description" name="description" placeholder="Job Description"></textarea>
+
+
+					<input class="contact__form-input" id="phone" type="number" name="phone" placeholder="Phone Number"> 
+					
+					<input class="contact__form-input" id="hourly_rate" type="number" name="hourly_rate" placeholder="Hourly Rate For Job"> 
+
+										
+   				<input class="contact__form-submit" type="submit" value="Submit">
+        </form>
+		</div>
+</body>
+</html>
