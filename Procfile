@@ -1,1 +1,0 @@
-web:gununicorn helping_hands.wshi --log-file -

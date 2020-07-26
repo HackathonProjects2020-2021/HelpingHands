@@ -1,93 +1,83 @@
 {%load static%}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Job Finder</title>
-	<meta name="description" content="Page-specific description">
-	<meta name="keywords" content="Page-specific keywords">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
-	<link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
-	<link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">	
-	<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="..." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Expandable portfolio gallery</title>
+    <!-- Page styles -->
+	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+
+	<link href="{ static '/css/bootstrap.min.css' %}" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/prettyphoto.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- Page scripts -->
+    <script src="{% static 'js/script2.min.js' %}" async="" defer=""></script>
 </head>
 <body>
-	<header class="page-header js-header">
-		<div class="page-header__inner">
-			<div class="page-header__logo">
-			<h1>Default</h1>
-			&nbsp;<span>Web</span>
-			</div>
-			<nav class="page-header__nav js-nav">
-			<ul>
-				<li>
-					<a class="page-header__nav-link js-anchor js-link is-active" href="{%url 'home'%}">Home</a>
-				</li>
-					<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'contact'%}">Contact Us</a>
-				</li>
-				
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'dashboard'%}">Dashboard</a>
-				</li>
-				
-				<li>
-					<a class="page-header__nav-link js-anchor js-link" href="{%url 'jobList'%}">Jobs List</a>
-				</li>
-				
-          </form>
-				</li>
-			</ul>
+
+	<section class="section-menu">
+    	<header class="site-header">
+			<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+			  <div class="container" style="color:black; font-weight: bold;">
+				<li class="active"><a class="nav-item nav-link" href="/" style="color:black">Home </a></li>
+				<li><a class="nav-item nav-link" href="/jobList" style="color:black">Jobs List </a></li>
+				<li><a class="nav-item nav-link" href="/contact" style="color:black">Contact </a></li>
+				<li><a class="nav-item nav-link" href="/dashboard" style="color:black">Dashboard </a></li>
+				<li><a class="nav-item nav-link" href="/profile" style="color:black">Profile & My Jobs </a></li>
+				<div class="collapse navbar-collapse" id="navbarToggle" style="color:black">
+					<div class="navbar-nav mr-auto">
+				 	</div>
+		  		</div>
+			  </div>
 			</nav>
-		</div>
-	</header>
+		  </header>
+    </section>
 
-	<!-- All Recipes Please add CSS and or fix html, images not found-->
-	<section class="portfolio js-portfolio" id="portfolio">
-		<div class="portfolio__inner">
-			<h2 class="portfolio__title">Jobs List</h2>
-			
-			
-			<ul class="portfolio__content">
+    <section>
+<div class="example-portfolio" data-expandablePortfolioGallery="">
+    <div class="example-portfolio__list" data-expandablePortfolioGallery-list="" data-masonry-options='{ "columnWidth": 0, "itemSelector": ".example-portfolio__item" }'>
+        {% for key,value in dic.items %}
+        
+        <div class="example-portfolio__item" data-expandablePortfolioGallery-item={{ key }}>
+            <!-- <div class="example-portfolio__itemImage" style="background-image:url('.&#x2F;images&#x2F;spiderman.jpg');"></div> -->
+            <div class="example-portfolio__itemWraper">
+                <div class="example-portfolio__itemWraperContainer">
+                    <div class="example-portfolio__itemWraperTitle">{{ value|get_item:'jobName' }}</div>
+                    <div class="example-portfolio__itemWraperDescription">Estimated Time Needed: {{ value|get_item:'hourly_rate' }} hours</div>
+                    <a class="promo__btn" href={% url 'job' key %}>Apply</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    </section>
 
-				{% for key,value in dic.items %}
-					<li class="portfolio__item js-item" data-cat="all flat">
+<div class="example-portfolio__contentList" data-expandablePortfolioGallery-contentList="">
+    {% for key,value in dic.items %}
+    <div class="example-portfolio__content" data-expandablePortfolioGallery-content={{ key }}>
+        <div class="example-portfolio__contentContainer">
+            <a class="example-portfolio__contentClose" data-expandablePortfolioGallery-close="">&times;</a>
 
-						<div class="portfolio__item-caption">
-							<span >Job : {{ value|get_item:'jobName' }}</span>
-							<br>
-							<!-- <br> -->
-							<!-- <span >2 .Employer: {{ value|get_item:'employer' }}</span> -->
-							<!-- <br> -->
-							<!-- <br> -->
-							<!-- <span >3 .Phone : {{ value|get_item:'phone' }}</span> -->
-							<!-- <br> -->
-							<!-- <br> -->
-							<!-- <span >4 . Description: {{ value|get_item:'description' }}</span> -->
-							<!-- <br> -->
-							<!-- <br> -->
-							<span >Hours: {{ value|get_item:'hourly_rate' }}</span>
-
-								<a class="promo__btn" href={% url 'job' key %}>More Details</a>
-
-						</div>
-					</a>
-					</li>
-				{% endfor %}
-		
-			</ul>
-		</div>
-	</section>
-
-
-
+            <h1>{{ value|get_item:'jobName' }}</h1>
+            <p>{{ value|get_item:'description' }}</p>
+            <a class="promo__btn" href={% url 'job' key %}>Apply</a>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
 </body>
 </html>
 {% endblock %}

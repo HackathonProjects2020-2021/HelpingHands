@@ -8,12 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.template.defaulttags import register
 
 
-from helping_hands.forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
-
-firebase_api = open('firebase_api.txt')
 
 
 config = {
@@ -41,17 +38,19 @@ def login(request):
 
 
 def dashboard(request):
-  email=request.POST.get('email')
+  email = request.POST.get('email')
   passw = request.POST.get("password")
 
   try:
     user=fireauth.sign_in_with_email_and_password(email,passw)
+    print("hello world")
     session_id = user['idToken']
     request.session['sid'] = str(session_id)
     uid = user['localId']
     request.session['uid'] = uid
     request.session.modified = True
-  except:
+  except Exception as e:
+    print(e)
     message = "Invalid Credentials"
     return render(request,"login.html",{"msg":message})
   return render(request, "dashboard.html",{"e":email})
@@ -96,6 +95,7 @@ def publishJob(request):
   if request.method == 'POST':
     jname = request.POST['jobName']
     jauthor = request.POST['employer']
+    jemployeremail = request.POST['employeremail']
     jdesc = request.POST['description']
     phone = request.POST['phone']
     hrate = request.POST['hourly_rate']
@@ -107,7 +107,8 @@ def publishJob(request):
       'phone': phone,
       'description': jdesc,
       'hourly_rate': hrate,
-      'employeruid': request.session.get('uid')
+      'employeruid': request.session.get('uid'),
+      'employeremail':jemployeremail,
     }
 
     print(data)
@@ -121,13 +122,15 @@ def get_item(dictionary, key):
     return dictionary.get(key)
 
 def jobList(request):
-	dic = OrderedDict()
-	all_recipes = database.child('jobsCreated').get()
-	uid = request.session.get('uid')
-	
-	for recipe in all_recipes.each():
-		dic[recipe.key()] = recipe.val()
-	return render(request, 'jobList.html', {"dic":dic})
+  dic = OrderedDict()
+  marvel = OrderedDict()
+  all_jobs = database.child('jobsCreated').get()
+  uid = request.session.get('uid')
+  
+  for job in all_jobs.each():
+    dic[job.key()] = job.val()
+
+  return render(request, 'jobList.html', {"dic":dic})
 
 
 def ownprofile(request):
@@ -185,12 +188,38 @@ def job(request, name):
 def apply(request, name):
   try:
     uid = request.session.get('uid')
+    receiver = database.child("jobsCreated").child(name).child('employeremail').get().val()
+    applicant_email = database.child("users").child(uid).child("email").get().val()
+    applicant = database.child("users").child(uid).child('fullname').get().val()
+    sendemail(receiver, applicant, applicant_email)
+    print(receiver, applicant, applicant_email)
     database.child("users").child(uid).child("applications").child(name).set(name)
-
-    #send email
-  except:
+  except Exception as e:
+      print(f'\n\n\n{e}\n\n\n')
       return redirect("/login/")
   return redirect(f"/job/{name}")
+
+def sendemail(receiver, applicant, applicant_email):
+    import smtplib, ssl
+
+    port = 465
+
+    password = ",ReGsrPx)<+y$9u/"
+
+    message = f"""\
+    Subject: HelpingHands Application
+
+    {applicant} applied for the job you posted!
+    Confirm or reject the application by reaching out to {applicant_email}
+
+    """
+    
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", port, context = context) as server:
+        server.login('helpinghands1729@gmail.com', password)
+        
+        server.sendmail("helpinghands1729@gmail.com",receiver,message)
 
 
 def delete(request, name):

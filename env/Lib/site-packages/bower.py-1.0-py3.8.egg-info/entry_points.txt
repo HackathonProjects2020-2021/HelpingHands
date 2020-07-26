@@ -1,0 +1,3 @@
+[console_scripts]
+bower.py = bowerlib.main:main
+
