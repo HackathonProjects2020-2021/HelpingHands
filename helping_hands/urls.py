@@ -17,11 +17,13 @@ urlpatterns = [
   # backend urls
     path('publishJob/',views.publishJob,name="publishJob"),
     path('jobList/',views.jobList,name="jobList"),
-		path('profile/', views.ownprofile, name='ownprofile'),
+		# path('profile/', views.ownprofile, name='ownprofile'),
     path('profile/<name>', views.publicprofile, name='publicprofile'),
     path('update/', views.updateprofile, name='update'),
 		path('job/<name>', views.job, name='job'),
     path('apply/<name>', views.apply, name='apply'),
     path('delete/<name>', views.delete, name='delete'),
     path('contact/', views.contact, name='contact'),
+    path('profile/', views.profileNew, name='profileNew'),
+
 ]

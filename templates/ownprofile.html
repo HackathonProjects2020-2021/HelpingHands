@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/prettyphoto.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,15 +27,9 @@
 			<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 			  <div class="container" style="color:black; font-weight: bold;">
 				<li class="active"><a class="nav-item nav-link" href="/" style="color:black">Home </a></li>
-				<li class="active"><a class="nav-item nav-link" href="/#section-about" style="color:black">About us </a></li>
-				<li><a class="nav-item nav-link" href="/#section-stat" style="color:black">Stats </a></li>
-				<li><a class="nav-item nav-link" href="/#section-getstarted" style="color:black">Get Started </a></li>
-				<!-- <li><a class="nav-item nav-link" href="#section-testimonial" style="color:black">Testimonials </a></li> -->
-				<li><a class="nav-item nav-link" href="/#section-gallery" style="color:black">Gallery </a></li>
-				<!-- <li><a class="nav-item nav-link" href="/jobList" style="color:black">Jobs List </a></li> -->
-				<li><a class="nav-item nav-link" href="/contact" style="color:black">Contact </a></li>
-				<!-- <li><a class="nav-item nav-link" href="/dashboard" style="color:black">Dashboard </a></li> -->
-				<!-- <li><a class="nav-item nav-link" href="/profile" style="color:black">Profile </a></li> -->
+				<li><a class="nav-item nav-link" href="/jobList" style="color:black">Jobs List </a></li>
+				<li><a class="nav-item nav-link" href="/dashboard" style="color:black">Dashboard </a></li>
+				<li><a class="nav-item nav-link" href="/profile" style="color:black">Profile </a></li>
 				<div class="collapse navbar-collapse" id="navbarToggle" style="color:black">
 					<div class="navbar-nav mr-auto">
 				 	</div>
@@ -45,25 +40,7 @@
 	</section>
     <!-- $Promo section-->
 	<section style="margin-left:2.5rem;" class="section-padding">
-		<!-- <div class="input">
-      		<h2>Full Name:</h2>
-	  		<input name="email" placeholder={{ profile.fullname }} type="email" >
-      	
-			<br>
-			<br>
-
-			<h2>Email:</h2>
-			<h3>{{ profile.email }}<h3>
-
-			<br>
-			<br>
-
-			<h2>Location</h2>
-			<h3>{{ profile.city }}, {{ profile.state}}<h3>
-			<br/>
-			<br/>
-			<br/>
-		</div> -->
+	
 		<form action="/update/" method="post"> {% csrf_token %}
             
             <div class="input">

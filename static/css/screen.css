@@ -201,9 +201,8 @@ body {
     height: 45px;
     margin-bottom: 20px;
     padding-left: 12px;
-    border: 2px solid #bec3c7;
-    font-style: italic;
-    color: #999;
+    border: 2px solid #000000;
+    text-align: center;
 }
 .contact__form-input:first-of-type {
     margin-right: 20px;
@@ -216,9 +215,9 @@ body {
     height: 155px;
     margin-bottom: 25px;
     padding: 20px 0 0 12px;
-    border: 2px solid #bec3c7;
+    border: 2px solid #000000;
     font-style: italic;
-    color: #999;
+    color: #000000;
     resize: none;
 }
 .contact__form-submit {

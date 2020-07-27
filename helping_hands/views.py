@@ -133,7 +133,9 @@ def jobList(request):
   return render(request, 'jobList.html', {"dic":dic})
 
 
-def ownprofile(request):
+
+
+def profileNew(request):
   if (request.session.get('sid')):
       #data = {}
       print(1)
@@ -147,7 +149,7 @@ def ownprofile(request):
         for key in myjobs:
           deletelist[key] = "/delete/"+key.replace(" ", "%20")
       print(deletelist)
-      return render(request, 'ownprofile.html', {'profile': profile, 'myjobs': myjobs, 'deletelist': deletelist})
+      return render(request, 'profileNew.html', {'profile': profile, 'myjobs': myjobs, 'deletelist': deletelist})
   else:
     return redirect('/login/')
 
